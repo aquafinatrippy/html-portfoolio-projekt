@@ -6,3 +6,5 @@ class Blog(models.Model):
     kuupaev = models.DateTimeField()
     sisu = models.TextField(max_length=255)
     pilt = models.ImageField(upload_to='images/')
+
+    
