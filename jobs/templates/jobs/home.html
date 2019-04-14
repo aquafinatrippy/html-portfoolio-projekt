@@ -1,12 +1,11 @@
+{% load staticfiles %}
 <!doctype html>
 <html lang="en">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.5">
-    <title>Album example · Bootstrap</title>
+    <title>Pealeht</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -36,7 +35,7 @@
   
     <header>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand active" href="#"> Portfoolio</a>
+  <a class="navbar-brand active" href="{%url 'home'%}"> Portfoolio</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -44,7 +43,7 @@
     <ul class="navbar-nav ml-auto">
 
       <li class="nav-item">
-        <a class="nav-link" href="#">Blog</a>
+        <a class="nav-link" href="{%url 'allblogs'%}">Blog</a>
       </li>
 
     </ul>
@@ -56,6 +55,7 @@
 
   <section class="jumbotron text-center">
     <div class="container">
+    <img src="{%  static 'mina.jpg'  %}" height="200">
       <h1 class="jumbotron-heading">Tanel Tekko</h1>
       <p class="lead text-muted">Mu nimi on Tanel Tekko ja see on mu portfoolio leht</p>
       <p>
@@ -71,8 +71,9 @@
       {%  for job in jobs.all  %}
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="{{job.image.url}}">
+            <img class="card-img-top" src="{{job.image.url}}" height="300">
             <div class="card-body">
+                <a href={{job.too}}>{{job.too}}</a> 
               <p class="card-text">{{job.summary}}</p>
         
             </div>
