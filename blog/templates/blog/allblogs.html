@@ -55,17 +55,21 @@
     <br>
     <br>
     <h3>Kõige viimased postitused</h3>
-    <hr>
+    <hr><div class="row">
+    <div class="col">
     {% for blog in blogs.all %}
-
+    <img src="{{blog.pilt.url}}" class="img-thumbnail" height="400">
+    </div><div class="col">
     <a href="#"><h3> {{ blog.pealkiri }}</h3></a>
+     {{blog.kuupaev}}
+     <p>{{blog.sisu}}</p>
+     </div>
     
-    {{blog.kuupaev}}
     <br>
-    <img src="{{blog.pilt.url}}" class="img-thumbnail" width="200" height="200">
+    
     <br>
-    <p>{{blog.sisu}}</p>
-    {% endfor %}
+    
+    {% endfor %}</div>
 </div>    
 </main>
 
